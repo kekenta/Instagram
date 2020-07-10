@@ -58,7 +58,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TA-xQ-Ia1">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TA-xQ-Ia1">
                         <rect key="frame" x="31" y="432.5" width="244" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -103,6 +103,7 @@
                 <outlet property="captionLabel" destination="hnj-dC-uWp" id="dOY-Fr-kIC"/>
                 <outlet property="commentButton" destination="bGZ-E9-DG9" id="hfh-fb-P2e"/>
                 <outlet property="commentLabel" destination="7TA-xQ-Ia1" id="hd9-ab-jc0"/>
+                <outlet property="commentTitle" destination="3E6-w5-Rsx" id="ZSP-39-Uj8"/>
                 <outlet property="dateLabel" destination="pNm-Mx-4bV" id="LeY-w4-XQb"/>
                 <outlet property="likeButton" destination="uTM-11-XLb" id="rs6-OH-Ols"/>
                 <outlet property="likeLabel" destination="9kN-yX-sXB" id="zQv-Rk-Jqa"/>

@@ -18,6 +18,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
 
+    @IBOutlet weak var commentTitle: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var commentButton: UIButton!
     
@@ -80,6 +81,11 @@ class PostTableViewCell: UITableViewCell {
             // 複数のコメントがある場合に「コメント入力者名 : コメント内容」の形の文字列にし、
             // それに改行を加えながら全てのコメントを全てallCommentに入れる
             allComment += (commentLiv2 + "\n")
+            //コメントされていないなら非表示に設定
+            if arrayCount["comment"] != nil
+            {
+                self.commentLabel.text = nil
+            }
             // allCommentの内容をcommentLabelに表示する
             self.commentLabel.text = allComment
         }
