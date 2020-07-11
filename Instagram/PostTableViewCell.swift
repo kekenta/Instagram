@@ -72,22 +72,25 @@ class PostTableViewCell: UITableViewCell {
         // コメント格納用の配列allCommentを空に設定する
         var allComment = ""
         var commentLiv2 = ""
+
         // コメントラベルに複数行の表示が行えるように設定する
         commentLabel.numberOfLines = 0;
         // postData.commentsの中から要素を１行ずつ取り出しcommentLivへ格納後、表示に合わせて要素を取り出す
-        
-        for arrayCount in postData.comments{
-            commentLiv2 = "\(arrayCount["commentname"]!) ： \(arrayCount["comment"]!)"
-            // 複数のコメントがある場合に「コメント入力者名 : コメント内容」の形の文字列にし、
-            // それに改行を加えながら全てのコメントを全てallCommentに入れる
-            allComment += (commentLiv2 + "\n")
-            //コメントされていないなら非表示に設定
-            if arrayCount["comment"] != nil
+        print(postData)
+        if postData.comments.isEmpty
+        {
+            self.commentLabel.text = nil
+        }else
+        {
+            for arrayCount in postData.comments
             {
-                self.commentLabel.text = nil
+                  commentLiv2 = "\(arrayCount["commentname"]!) ： \(arrayCount["comment"]!)"
+                  
+                  // 複数のコメントがある場合に「コメント入力者名 : コメント内容」の形の文字列にし、
+                  // それに改行を加えながら全てのコメントを全てallCommentに入れる
+                  allComment += (commentLiv2 + "\n")
+                self.commentLabel.text = allComment
             }
-            // allCommentの内容をcommentLabelに表示する
-            self.commentLabel.text = allComment
         }
     }
 }

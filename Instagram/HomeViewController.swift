@@ -68,7 +68,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得してデータを設定する
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
+        print("確認")
         print(postArray[indexPath.row])
+        print("確認")
         cell.setPostData(postArray[indexPath.row])
         
         // セル内のボタンのアクションをソースコードで設定する
@@ -126,8 +128,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // 配列からタップされたインデックスのデータを取り出す
         let postData = postArray[indexPath!.row]
-        
-        CommentViewController.postData = postData
+        // 対象のドキュメントIDを設定する
+        CommentViewController.documentId = postData.id
+        //CommentViewController.postData = postData
         
         self.present(CommentViewController, animated: true, completion: nil)
 

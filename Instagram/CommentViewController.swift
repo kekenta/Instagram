@@ -14,6 +14,8 @@ class CommentViewController: UIViewController {
     
     // 格納データ用の配列を設定する
     var postData: PostData!
+    
+    var documentId: String!
 
     @IBOutlet weak var CommentText: UITextField!
     @IBOutlet weak var PostButton: UIButton!
@@ -52,7 +54,7 @@ class CommentViewController: UIViewController {
          var updateValue: FieldValue
          updateValue = FieldValue.arrayUnion([postDic])
          // postDicのアップデート処理（どの投稿（postData.id）かと紐付ける）
-         let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(self.documentId)
          
          // HUDで投稿処理中の表示を開始
          SVProgressHUD.show()
@@ -78,9 +80,7 @@ class CommentViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-    
     
 }
